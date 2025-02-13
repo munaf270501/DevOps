@@ -1,0 +1,25 @@
+# Docker Compose Configuration for Apache Web Server
+
+version: '3'
+
+services:
+  web:
+    # Build the container image using the Dockerfile in the current directory
+    build: .
+    
+    # Name the container for easier management
+    container_name: Apache_Container
+
+    # Volumes define the mapping between the host and the container
+    volumes:
+      - ./root-folder:/var/www/html  # Host directory ./root-folder mapped to /var/www/html in the container
+
+    # Ports section to map the host's port 8089 to the container's port 80
+    ports:
+      - "8089:80"  # Exposes port 80 inside the container to port 8089 on the host
+
+    # Automatically restart the container in case of failure or reboot
+    restart: always
+
+# File created by: Munaf Shaikh
+
