@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 
 services:
   tomcat:
@@ -10,6 +10,7 @@ services:
     volumes:
       - ./tomcat_logs:/usr/local/tomcat/logs
       - ./tomcat_webapps:/usr/local/tomcat/webapps
+      - ./tomcat_conf:/usr/local/tomcat/conf  # Mount the Tomcat configuration folder
     environment:
       - CATALINA_HOME=/usr/local/tomcat
 
